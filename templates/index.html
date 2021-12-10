@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com"> 
+	<link href="https://fonts.googleapis.com/css2?family=McLaren&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link href="static/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<link href="static/css/customIndex.css" rel="stylesheet">
+	<link href="static/css/bootstrap-responsive.css" rel="stylesheet">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<style>
+	#before-texts{
+		margin-top: 1em;
+	}
+	img{
+		margin-bottom: 0.5em;
+	}
+	.responsive{
+		width:15%;
+		height: auto;
+	}
+	.container{
+		font-size: 4em;
+		margin: auto;
+	}
+	.row{
+		margin-bottom: 0.5em;
+		text-align: center;
+		font-family: 'McLaren';
+		font-size: xx-large;
+	}
+	.search_bar{
+		width: 100%;
+		margin-left:5em;
+		text-align: center;
+	}
+	.search_bar_wrap{
+		width: 67%;
+		border-radius: 15px;
+		border: 1px solid #c3baba;
+		height: 4em;
+		margin-top: 2em;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 2em;
+		display: flex;
+		align-items:center;
+		padding-left: 1em;
+
+	}
+	.fit{
+		max-width: 60%;
+		max-height: 60%;
+	}
+	.size_check{
+		width: 90%;
+	}
+	.search_input{
+		border: 0px;
+		padding-left: 1em;
+		width: 200%;
+		font-size: large;
+	}
+	.search_input:focus{
+		outline: none;
+	}
+	.overall{
+		margin-top: 10%;
+	}
+	.quantity{
+		font-family: 'McLaren';
+		text-align: center;
+		margin-top: 2%;
+		font-size: x-large;
+	}
+	input[type=number]::-webkit-outer-spin-button, 
+	input[type=number]::-webkit-inner-spin-button {
+		-webkit-appearance: inner-spin-button !important;
+		width: 20%;
+		opacity: 1;
+	}
+	.submit_button{
+		margin: auto;
+		font-size: x-large;
+		font-family: 'McLaren';
+	}
+	</style>
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="{{ url_for('home') }}">Home</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="mailto: daiyunx2@illinois.edu">Support</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="overall">
+	<div class="container">
+		<div class="row">
+			<img src="{{url_for('static',filename = 'imdb.png')}}" class="responsive">
+			<img src="{{url_for('static',filename = 'cross_icon.png')}}" class="responsive">
+			<img src="{{url_for('static',filename = 'goodreads.png')}}" class="responsive">
+			<div id="before-texts">
+				<p> Search for a movie/book, </p>
+			<p>	I'll recommend you some books/movies!</p>
+			</div>
+			
+		</div>
+	</div>
+	<div class="search_bar">
+		<form action="/search" method="POST" class="size_check">
+			<div class="quantity">
+				<p>Select a catagory:</p>
+				<div>
+					<input type="radio" id="huey" name="catagory" value="movie"
+					checked>
+					<label for="huey">Movie</label>
+				</div>					
+				<div>
+						<input type="radio" id="dewey" name="catagory" value="book">
+						<label for="dewey">Book</label>
+					</div>
+					<p>Number of Results: <input type="number" id="quantity" name="quantity" min="1" max="6525" value="10"></p>
+				</div>
+				<div class="search_bar_wrap">
+					<img src="{{url_for('static',filename = 'search_icon.png')}}" class="fit">
+					<input class="search_input" name="querytext" type="text" placeholder="Search..">
+				</div>
+				<div>
+					<button class="submit_button" type="submit">Search</button>
+				</div>
+			</form>
+	</div>
+</div>
+</body>
+
+<script>
+	$(document).ready(function(){
+		if(window.location.href.indexOf("alert=1") > -1){
+			alert("Invalid Input!");
+		}
+	});
+</script>
+</html>
+
