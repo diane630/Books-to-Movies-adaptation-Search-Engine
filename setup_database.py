@@ -7,7 +7,8 @@ es_index_client = IndicesClient(es_client)
 try:
     es_index_client.create(index="db-demo")
 except Exception as e: 
-    print(e)
+    # print(e)
+    pass
 
 print("Start seeding database. This may take a few hours... Thanks for your patience.")
 # seed goodreads data
@@ -66,8 +67,8 @@ while book_idx < len(book_urls):
     }
 
     res = es_client.index(index="db-demo", id=i, document=doc)
-    if i % 100 == 0:
-        print(".", end="")
+    if i % 10 == 0:
+        print(".", end='',flush=True)
     if i % 1000 == 0:
         print(res['result'] + " " + str(i))     
     i += 1
@@ -130,8 +131,8 @@ while movie_idx < len(movie_urls):
     }
 
     res = es_client.index(index="db-demo", id=i, document=doc)
-    if i % 100 == 0:
-        print(".", end="")
+    if i % 10 == 0:
+        print(".", end="",flush=True)
     if i % 1000 == 0:
         print(res['result'] + " " + str(i))     
     i += 1

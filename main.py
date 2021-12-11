@@ -1,6 +1,6 @@
 from flask import Flask
 from elasticsearch import Elasticsearch
-from flask import render_template, request, jsonify, redirect, url_for
+from flask import render_template, request, redirect, url_for
 
 app = Flask(__name__) 
 
