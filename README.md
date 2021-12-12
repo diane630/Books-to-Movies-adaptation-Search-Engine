@@ -38,4 +38,4 @@ This project is meant to develop a search engine for book-to-movie or movie-to-b
 For example, an user can enter a phrase (e.g. Harry Potter and the Sorcerer's Stone) and select a catagory (movie), and the application will retrieve search result for all relevant movies. The user can then select any of them, click the recommend button, and book recommendations for this movie  will be returned(e.g. Harry Potter and the Sorcerer's Stone (Harry Potter, #1) along with other Harry Potter series book). Users can also adjust the number of results for both search and recommendation.
 
 # Demo video
-https://drive.google.com/file/d/1QuAIFLSQt3AYwREJfyUv_Pyakd6nhk8m/view?usp=sharing
+https://drive.google.com/file/d/1c4ozvpe91szWteBz-6wVFwOUonVyYUdF/view
