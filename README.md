@@ -20,7 +20,7 @@ $ source ./venv/bin/activate
 ```  
 
 # Overview & Main Results
-The project is based on elastic search, a document-orientated database that provides unstructured search functionality. The underlying book and movie data is crawled from IMDB and Goodreads. The code base can be divided to 3 parts.   
+The project is based on elastic search, a document-orientated database that provides unstructured search functionality. The underlying book and movie data is crawled from IMDB and Goodreads. The code base can be divided to 3 steps.   
 
 ### Crawl raw data:
 Individual scraper files are in "scraper_code folder". Cleaned data (url, title, writer, story, character) is stored in "IMDB_goodreads_data folder".
@@ -33,7 +33,7 @@ Individual scraper files are in "scraper_code folder". Cleaned data (url, title,
 In "main.py", a basic Flask application communicates with Elastic Search database using ["query string"](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html) queries for retrieving search results and ["more like this"](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-mlt-query.html) queries for retrieving similar documents.
 
 # Self-evaluation
-This project is meant to develop a search engine for book-to-movie or movie-to-book adaptations.  So, the project includes two parts: first, build a basic search engine to source a specific document of one catagory (a book or a movie); second, given a known document, recommend similar documents from the other catagory (movies or books).    
+This project is meant to develop a search engine for book-to-movie or movie-to-book adaptations.  It includes two parts: first, build a basic search engine to source a specific document of one catagory (a book or a movie); second, given a known document, recommend similar documents from the other catagory (movies or books).    
 
 For example, an user can enter a phrase (e.g. Harry Potter and the Sorcerer's Stone) and select a catagory (movie), and the application will retrieve search result for all relevant movies. The user can then select any of them, click the recommend button, and book recommendations for this movie  will be returned(e.g. Harry Potter and the Sorcerer's Stone (Harry Potter, #1) along with other Harry Potter series book). Users can also adjust the number of results for both search and recommendation.
 
