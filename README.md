@@ -19,7 +19,7 @@ $ source ./venv/bin/activate
 (venv) $ python3 main.py
 ```  
 
-# Overview & Main Results
+# Overview
 The project is based on elastic search, a document-orientated database that provides unstructured search functionality. The underlying book and movie data is crawled from IMDB and Goodreads. It is meant to develop a search engine for book-to-movie or movie-to-book adaptations.  It includes two parts: first, build a basic search engine to source a specific document of one catagory (a book or a movie); second, given a known document, recommend similar documents from the other catagory (movies or books).    
 
 For example, an user can enter a phrase (e.g. Harry Potter and the Sorcerer's Stone) and select a catagory (movie), and the application will retrieve search result for all relevant movies. The user can then select any of them, click the recommend button, and book recommendations for this movie  will be returned(e.g. Harry Potter and the Sorcerer's Stone (Harry Potter, #1) along with other Harry Potter series book). Users can also adjust the number of results for both search and recommendation.
